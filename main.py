@@ -14,7 +14,7 @@ while True:
         print("Combattre cet adversaire")
     elif choix == 2:
         niveau_vie-=1
-        print(niveau_vie)
+        print('vie reste: '+str(niveau_vie))
         print(choix)
         break
     elif choix == 3:
