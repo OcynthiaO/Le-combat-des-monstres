@@ -1,6 +1,6 @@
 import random
 force_adversaire = random.randint(1, 5)
-
+niveau_vie = 20
 print('Vous tombez face à face avec un adversaire de difficulté :'+str(force_adversaire))
 
 choix = int(input('Que voulez-vous faire?: \n'
@@ -13,7 +13,10 @@ while True:
     if choix == 1:
         print("Combattre cet adversaire")
     elif choix == 2:
-        print("Contourner cet adversaire et aller ouvrir une autre")
+        niveau_vie-=1
+        print(niveau_vie)
+        print(choix)
+        break
     elif choix == 3:
         print('''Pour réussir un combat, il faut que la valeur du dé lancé soit supérieure à la force de l’adversaire.
 Dans ce cas, le niveau de vie de l’usager est augmenté de la force de l’adversaire.
