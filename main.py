@@ -1,9 +1,12 @@
 import random
 force_adversaire = random.randint(1, 5)
+force_adversaire_Boss = random.randint(1, 16)
+force_joueur= random.randint(1,12)
 niveau_vie = 20
 
 def adversaire(int):
     print('Vous tombez face à face avec un adversaire de difficulté :'+str(force_adversaire))
+
 
 def choix (int):
     global nombre
@@ -13,16 +16,17 @@ def choix (int):
                       '3- Afficher les règles du jeu\n'
                       '4- Quitter la partie\n'))
 
+
+
 adversaire(int)
 choix(int)
-
 while True:
     if nombre == 1:
         print("Combattre cet adversaire")
 
     elif nombre == 2:
         niveau_vie-=1
-        print('vie reste: '+str(niveau_vie))
+        print('Niveau de vie de l’usager: '+str(niveau_vie))
         adversaire(int)
         choix(int)
 
