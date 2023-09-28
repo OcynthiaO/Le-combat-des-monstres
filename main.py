@@ -1,23 +1,32 @@
 import random
 force_adversaire = random.randint(1, 5)
 niveau_vie = 20
-print('Vous tombez face à face avec un adversaire de difficulté :'+str(force_adversaire))
 
-choix = int(input('Que voulez-vous faire?: \n'
+def adversaire(int):
+    print('Vous tombez face à face avec un adversaire de difficulté :'+str(force_adversaire))
+
+def choix (int):
+    global nombre
+    nombre=int(input('Que voulez-vous faire?: \n'
                       '1- Combattre cet adversaire\n'
                       '2- Contourner cet adversaire et aller ouvrir une autre\n'
                       '3- Afficher les règles du jeu\n'
                       '4- Quitter la partie\n'))
 
+adversaire(int)
+choix(int)
+
 while True:
-    if choix == 1:
+    if nombre == 1:
         print("Combattre cet adversaire")
-    elif choix == 2:
+        break
+    elif nombre == 2:
         niveau_vie-=1
         print('vie reste: '+str(niveau_vie))
-        print(choix)
+        adversaire(int)
+        choix(int)
         break
-    elif choix == 3:
+    elif nombre == 3:
         print('''Pour réussir un combat, il faut que la valeur du dé lancé soit supérieure à la force de l’adversaire.
 Dans ce cas, le niveau de vie de l’usager est augmenté de la force de l’adversaire.
 Une défaite a lieu lorsque la valeur du dé lancé par l’usager est inférieure ou égale à la force de l’adversaire. 
@@ -26,7 +35,7 @@ La partie se termine lorsque les points de vie de l’usager tombent sous 0.
 L’usager peut combattre ou éviter chaque adversaire, dans le cas de l’évitement, il y a une pénalité de 1 point de vie.
 ''')
         break
-    elif choix == 4:
+    elif nombre == 4:
         print("Merci et au revoir...")
         break
     else:
