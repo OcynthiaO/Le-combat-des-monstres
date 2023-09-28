@@ -1,13 +1,13 @@
 import random
 force_adversaire = random.randint(1, 5)
 force_adversaire_Boss = random.randint(1, 16)
-force_joueur= random.randint(1,12)
+force_joueur = random.randint(1, 12)
 niveau_vie = 20
 
 def adversaire(int):
     print('Vous tombez face à face avec un adversaire de difficulté :'+str(force_adversaire))
-
-
+def joueur(int):
+    print('Votre force:' +str(force_joueur))
 def choix (int):
     global nombre
     nombre=int(input('Que voulez-vous faire?: \n'
@@ -16,9 +16,8 @@ def choix (int):
                       '3- Afficher les règles du jeu\n'
                       '4- Quitter la partie\n'))
 
-
-
 adversaire(int)
+joueur(int)
 choix(int)
 while True:
     if nombre == 1:
@@ -40,6 +39,7 @@ La partie se termine lorsque les points de vie de l’usager tombent sous 0.
 L’usager peut combattre ou éviter chaque adversaire, dans le cas de l’évitement, il y a une pénalité de 1 point de vie.
 ''')
         adversaire(int)
+        joueur(int)
         choix(int)
     elif nombre == 4:
         print("Merci et au revoir...")
