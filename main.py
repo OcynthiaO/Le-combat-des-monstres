@@ -19,22 +19,24 @@ choix(int)
 while True:
     if nombre == 1:
         print("Combattre cet adversaire")
-        break
+
     elif nombre == 2:
         niveau_vie-=1
         print('vie reste: '+str(niveau_vie))
         adversaire(int)
         choix(int)
-        break
+
     elif nombre == 3:
-        print('''Pour réussir un combat, il faut que la valeur du dé lancé soit supérieure à la force de l’adversaire.
+        print('''règles:
+Pour réussir un combat, il faut que la valeur du dé lancé soit supérieure à la force de l’adversaire.
 Dans ce cas, le niveau de vie de l’usager est augmenté de la force de l’adversaire.
 Une défaite a lieu lorsque la valeur du dé lancé par l’usager est inférieure ou égale à la force de l’adversaire. 
 Dans ce cas, le niveau de vie de l’usager est diminué de la force de l’adversaire.
 La partie se termine lorsque les points de vie de l’usager tombent sous 0.
 L’usager peut combattre ou éviter chaque adversaire, dans le cas de l’évitement, il y a une pénalité de 1 point de vie.
 ''')
-        break
+        adversaire(int)
+        choix(int)
     elif nombre == 4:
         print("Merci et au revoir...")
         break
