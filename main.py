@@ -20,7 +20,7 @@ def choix (int):
                       '4- Quitter la partie\n'))
 def statut(int):
     print('Adversaire:' + str(numero_adversaire))
-    print('Force de l’adversaire:'+ str(adversaire(int)))
+    print('Force de l’adversaire:'+ str(force_adversaire))
     print('Niveau de vie de l’usager:'+ str(niveau_vie))
     print('Combat'+str(numero_combat)+':'+ str(nombre_victoires) + ' vs '+str(nombre_defaites))
 
