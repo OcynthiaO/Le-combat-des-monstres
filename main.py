@@ -19,8 +19,10 @@ def printStatus():
     print("Combat " + str(fightTotal)+": "+ str(victoryTotal)+" victoire vs "+ str(lossTotal)+" défaite")
     print("=============================")
 
-# la partie(Boss)
-while playHp >= 0:
+# La partie
+choice = 0
+while playHp >= 0 and choice != '4':
+    # joueur tombe sur le boss apres 3 victoire consecutif(Boss)
     if victoryCurrent >= 3:
         print("BOSS...")
         monsterDmg = random.randint(6,12)
@@ -45,7 +47,6 @@ while playHp >= 0:
                 playHp = playHp - monsterDmg
                 fightTotal += 1
                 lossTotal += 1
-# la partie(normal)(choix 1)
     else:
         monsterDmg = random.randint(2,12 )
         print("Vous tombez face à face avec un adversaire de difficulté:" + str(monsterDmg))
@@ -56,9 +57,11 @@ while playHp >= 0:
         print('3- Afficher les règles du jeu')
         print('4- Quitter la partie')
         choice = input('''\nQue voulez-vous faire ?''')
+        # choix 1---combattre
         if choice == "1":
             playDmg = random.randint(2, 12)
             print("Lancer du dé：" + str(playDmg))
+            # gagner
             if monsterDmg < playDmg:
                 print("Dernier combat = gagner")
                 print("")
@@ -66,6 +69,7 @@ while playHp >= 0:
                 fightTotal += 1
                 victoryTotal += 1
                 victoryCurrent += 1
+            # perdu
             else:
                 print("Dernier combat = défaite")
                 print("")
@@ -73,11 +77,11 @@ while playHp >= 0:
                 fightTotal += 1
                 lossTotal += 1
 
-# la partie(normal)(choix 2)
+#choix 2---detourner
         elif choice == "2":
             playHp = playHp - 1
 
-# la partie(normal)(choix 3)
+#choix 3----regle
         elif choice == "3":
             print("=============================")
             print('''            Pour réussir un combat, il faut que la valeur du dé lancé soit supérieure à la force de l’adversaire.
@@ -88,10 +92,9 @@ while playHp >= 0:
             L’usager peut combattre ou éviter chaque adversaire, dans le cas de l’évitement, il y a une pénalité de 1 point de vie.''')
             print("=============================")
 
-# la partie(normal)(choix 14
+#choix 4---quitter
         elif choice == "4":
             print("Merci et au revoir...")
-            break
 
 
 #game over
